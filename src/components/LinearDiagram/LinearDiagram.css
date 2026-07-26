@@ -1,0 +1,189 @@
+.LinearDiagram {
+  color: var(--linear-diagram-foreground);
+  display: flex;
+  flex-direction: column;
+  font-family: var(--linear-diagram-body-font-family), Arial, sans-serif;
+  font-size: var(--linear-diagram-body-font-size);
+  font-style: normal;
+  font-weight: var(--linear-diagram-body-font-weight);
+  gap: var(--linear-diagram-content-gap);
+  line-height: var(--linear-diagram-body-line-height);
+  margin: 0;
+  max-width: 100%;
+  position: relative;
+  width: 397px;
+}
+
+.LinearDiagram__chart {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: var(--linear-diagram-chart-gap);
+  width: 100%;
+}
+
+.LinearDiagram__plot {
+  align-items: center;
+  display: flex;
+  gap: var(--linear-diagram-plot-gap);
+  width: 100%;
+}
+
+.LinearDiagram__y-axis-label,
+.LinearDiagram__y-axis-values,
+.LinearDiagram__x-axis {
+  font-family: var(--linear-diagram-axis-font-family), "Avenir Next", Arial, sans-serif;
+  font-size: var(--linear-diagram-axis-font-size);
+  font-weight: var(--linear-diagram-axis-font-weight);
+  line-height: var(--linear-diagram-axis-line-height);
+}
+
+.LinearDiagram__y-axis-label {
+  align-items: center;
+  align-self: stretch;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  transform: rotate(-90deg);
+  white-space: nowrap;
+  width: 16px;
+}
+
+.LinearDiagram__graph {
+  align-items: center;
+  box-shadow:
+    inset 0 1px var(--linear-diagram-graph-border-color),
+    inset 0 -1px var(--linear-diagram-graph-border-color);
+  display: flex;
+  flex: 1 1 0;
+  gap: var(--linear-diagram-graph-gap);
+  min-width: 0;
+}
+
+.LinearDiagram__y-axis-values {
+  align-items: center;
+  display: flex;
+  flex: 0 0 var(--linear-diagram-y-axis-values-width);
+  flex-direction: column;
+  gap: var(--linear-diagram-y-axis-values-gap);
+  padding-block: var(--linear-diagram-y-axis-values-padding-vertical);
+  text-align: right;
+  width: var(--linear-diagram-y-axis-values-width);
+}
+
+.LinearDiagram__y-axis-values > * {
+  flex: 0 0 auto;
+  width: 100%;
+}
+
+.LinearDiagram__graph-slot {
+  align-items: center;
+  align-self: center;
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  gap: var(--linear-diagram-graph-slot-gap);
+  height: var(--linear-diagram-graph-slot-height);
+  isolation: isolate;
+  justify-content: center;
+  min-width: 0;
+  position: relative;
+}
+
+.LinearDiagram__line-graph {
+  display: block;
+  height: 49px;
+  left: 4.06%;
+  max-width: none;
+  position: absolute;
+  top: 8px;
+  width: 96.23%;
+  z-index: 2;
+}
+
+.LinearDiagram__divider {
+  background: var(--linear-diagram-divider-background);
+  flex: 0 0 var(--linear-diagram-divider-height);
+  height: var(--linear-diagram-divider-height);
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+.LinearDiagram__x-axis {
+  align-items: center;
+  display: flex;
+  gap: var(--linear-diagram-x-axis-gap);
+  height: var(--linear-diagram-x-axis-height);
+  justify-content: space-between;
+  padding-left: var(--linear-diagram-x-axis-padding-left);
+  text-align: center;
+  width: 100%;
+}
+
+.LinearDiagram__x-axis > * {
+  flex: 0 0 auto;
+}
+
+.LinearDiagram__legend {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: var(--linear-diagram-legend-gap);
+  justify-content: center;
+  padding-left: var(--linear-diagram-legend-padding-left);
+  width: 100%;
+}
+
+.LinearDiagram__legend-item {
+  align-items: center;
+  display: flex;
+  gap: var(--linear-diagram-legend-item-gap);
+  white-space: nowrap;
+}
+
+.LinearDiagram__legend-bar {
+  background: var(--linear-diagram-accent);
+  border-radius: var(--linear-diagram-legend-bar-radius);
+  flex: 0 0 var(--linear-diagram-legend-bar-width);
+  height: var(--linear-diagram-legend-bar-height);
+  width: var(--linear-diagram-legend-bar-width);
+}
+
+.LinearDiagram__footer {
+  align-items: flex-start;
+  display: flex;
+  gap: var(--linear-diagram-footer-gap);
+  height: var(--linear-diagram-footer-height);
+  justify-content: space-between;
+  width: 100%;
+}
+
+.LinearDiagram__footer,
+.LinearDiagram__source {
+  white-space: nowrap;
+}
+
+.LinearDiagram__source {
+  align-items: center;
+  display: flex;
+  gap: var(--linear-diagram-footer-source-gap);
+}
+
+.LinearDiagram__source-icon {
+  align-items: center;
+  background: var(--linear-diagram-footer-icon-background);
+  border-radius: var(--linear-diagram-footer-icon-radius);
+  display: flex;
+  flex: 0 0 var(--linear-diagram-footer-icon-size);
+  height: var(--linear-diagram-footer-icon-size);
+  justify-content: center;
+  overflow: hidden;
+  width: var(--linear-diagram-footer-icon-size);
+}
+
+.LinearDiagram__source-icon img {
+  display: block;
+  height: 6.86px;
+  width: 9.64px;
+}

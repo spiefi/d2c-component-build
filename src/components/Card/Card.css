@@ -1,0 +1,59 @@
+.Card {
+  align-items: flex-start;
+  background: var(--card-background);
+  border-color: var(--card-border-color);
+  border-radius: var(--card-radius);
+  border-style: solid;
+  border-width: 0;
+  color: var(--card-foreground);
+  display: flex;
+  flex-direction: column;
+  gap: var(--card-content-gap);
+  min-height: 358px;
+  overflow: hidden;
+  padding: var(--card-padding-vertical) var(--card-padding-horizontal);
+  position: relative;
+  width: min(416px, 100%);
+}
+
+.Card__text {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: var(--card-text-gap);
+  width: 100%;
+  word-break: break-word;
+}
+
+.Card__title,
+.Card__body {
+  color: inherit;
+  font-style: normal;
+  margin: 0;
+  width: 100%;
+}
+
+.Card__title {
+  font-family: var(--card-title-font-family), "Avenir Next", Arial, sans-serif;
+  font-size: var(--card-title-font-size);
+  font-weight: var(--card-title-font-weight);
+  line-height: var(--card-title-line-height);
+  min-width: 200px;
+}
+
+.Card__body {
+  font-family: var(--card-body-font-family), "Avenir Next", Arial, sans-serif;
+  font-size: var(--card-body-font-size);
+  font-weight: var(--card-body-font-weight);
+  line-height: var(--card-body-line-height);
+}
+
+.Card__slot {
+  display: flex;
+  flex: 0 0 166px;
+  flex-direction: column;
+  gap: var(--card-slot-gap);
+  min-height: 166px;
+  position: relative;
+  width: 100%;
+}

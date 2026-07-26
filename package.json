@@ -1,0 +1,52 @@
+{
+  "name": "d2c-component-build",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "yarn@4.17.1",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "main": "./dist/d2c-component-build.cjs",
+  "module": "./dist/d2c-component-build.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/d2c-component-build.js",
+      "require": "./dist/d2c-component-build.cjs"
+    },
+    "./styles.css": "./dist/d2c-component-build.css"
+  },
+  "scripts": {
+    "build": "vite build && tsc -p tsconfig.build.json",
+    "build-storybook": "storybook build",
+    "check": "yarn typecheck && yarn build && yarn build-storybook",
+    "storybook-web": "storybook dev -p 6006 --no-open",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "react": ">=18.3.0 <20.0.0",
+    "react-dom": ">=18.3.0 <20.0.0"
+  },
+  "devDependencies": {
+    "@storybook/addon-a11y": "10.5.4",
+    "@storybook/addon-docs": "10.5.4",
+    "@storybook/react-vite": "10.5.4",
+    "@types/node": "26.1.1",
+    "@types/react": "19.2.17",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "6.0.4",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "storybook": "10.5.4",
+    "typescript": "7.0.2",
+    "vite": "8.1.5"
+  }
+}
