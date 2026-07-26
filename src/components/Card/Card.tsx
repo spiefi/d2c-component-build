@@ -1,4 +1,4 @@
-import type { CSSProperties, HTMLAttributes, ReactNode } from 'react';
+import { Children, type CSSProperties, type HTMLAttributes, type ReactNode } from 'react';
 
 import { getVariableByName } from '@src/design-tokens/figma-variables-resolver.js';
 import { cloneChildrenWithModes } from '@src/utils/react-utils';
@@ -12,7 +12,7 @@ type CardHeadingLevel = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 export type CardProps = Omit<HTMLAttributes<HTMLElement>, 'children' | 'title'> & {
   /** Supporting copy shown below the title. */
   body?: ReactNode;
-  /** Content rendered in the fixed Card slot. All React component children inherit `modes`. */
+  /** Optional slot content. The slot is omitted when empty, and React component children inherit `modes`. */
   children?: ReactNode;
   /** Semantic heading element used for the title. */
   headingAs?: CardHeadingLevel;
@@ -48,6 +48,7 @@ export default function Card({
   title = 'Discount development',
   ...rest
 }: CardProps) {
+  const hasSlotContent = Children.toArray(children).some((child) => child !== '');
   const cardStyle: CardStyle = {
     '--card-background': String(resolveCardToken('card/background', modes)),
     '--card-body-font-family': String(resolveCardToken('card/body/fontFamily', modes)),
@@ -72,7 +73,9 @@ export default function Card({
   return (
     <article
       {...rest}
-      className={['Card', className].filter(Boolean).join(' ')}
+      className={['Card', hasSlotContent && 'Card--with-slot', className]
+        .filter(Boolean)
+        .join(' ')}
       data-name="card"
       style={cardStyle}
     >
@@ -81,7 +84,9 @@ export default function Card({
         {body !== null && <p className="Card__body">{body}</p>}
       </header>
 
-      <div className="Card__slot">{cloneChildrenWithModes(children, modes)}</div>
+      {hasSlotContent && (
+        <div className="Card__slot">{cloneChildrenWithModes(children, modes)}</div>
+      )}
     </article>
   );
 }

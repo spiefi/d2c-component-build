@@ -48,7 +48,7 @@ const meta = {
     docs: {
       description: {
         component:
-          'A token-driven content card with a real React slot. Slot children recursively inherit the Card modes.',
+          'A token-driven content card with an optional React slot. Empty slots collapse completely; rendered slot children recursively inherit the Card modes.',
       },
     },
   },
