@@ -62,8 +62,6 @@ The supplied Figma variables resolve the Card font family to `Averta CY`. The co
 
 The workflow in `.github/workflows/storybook-pages.yml` builds and publishes Storybook whenever `main` is pushed.
 
-1. Create or connect a GitHub repository and push this project to `main`.
-2. In the repository settings, open **Pages** and select **GitHub Actions** as the source if it is not selected already.
-3. After the **Publish Storybook** action succeeds, GitHub displays the public Pages URL in the deployment summary.
+Public Storybook: [https://spiefi.github.io/d2c-component-build/](https://spiefi.github.io/d2c-component-build/)
 
-For a repository named `my-components`, the URL is normally `https://YOUR-USER.github.io/my-components/`.
+The first deployment enables GitHub Pages automatically. Subsequent pushes to `main` rebuild and republish the component stories.
