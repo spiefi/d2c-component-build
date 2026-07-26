@@ -12,7 +12,7 @@ type CardHeadingLevel = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 export type CardProps = Omit<HTMLAttributes<HTMLElement>, 'children' | 'title'> & {
   /** Supporting copy shown below the title. */
   body?: ReactNode;
-  /** Optional slot content. The slot is omitted when empty, and React component children inherit `modes`. */
+  /** Optional, content-sized slot. The slot is omitted when empty, and React component children inherit `modes`. */
   children?: ReactNode;
   /** Semantic heading element used for the title. */
   headingAs?: CardHeadingLevel;
@@ -73,9 +73,7 @@ export default function Card({
   return (
     <article
       {...rest}
-      className={['Card', hasSlotContent && 'Card--with-slot', className]
-        .filter(Boolean)
-        .join(' ')}
+      className={['Card', className].filter(Boolean).join(' ')}
       data-name="card"
       style={cardStyle}
     >

@@ -15,10 +15,6 @@
   width: min(416px, 100%);
 }
 
-.Card--with-slot {
-  min-height: 358px;
-}
-
 .Card__text {
   display: flex;
   flex: 0 0 auto;
@@ -53,10 +49,9 @@
 
 .Card__slot {
   display: flex;
-  flex: 0 0 166px;
+  flex: 0 0 auto;
   flex-direction: column;
   gap: var(--card-slot-gap);
-  min-height: 166px;
   position: relative;
   width: 100%;
 }
